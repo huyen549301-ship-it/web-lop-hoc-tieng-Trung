@@ -89,7 +89,7 @@ function setMode(mode) {
     loadQuestion();
 }
 
-// 5. Tải câu hỏi (Đã tối ưu ẩn ngay lập tức & gán đúng từ gốc)
+// 5. Tải câu hỏi 
 function loadQuestion() {
     if (wordQueue.length === 0) { showResult(); return; }
     
@@ -99,8 +99,10 @@ function loadQuestion() {
     const speakerBtn = document.getElementById('speaker-btn');
     const optionsEl = document.getElementById('options');
 
+    optionsEl.style.pointerEvents = 'auto';
     questionEl.innerText = current.word;
-    questionEl.style.color = "";
+    questionEl.style.color = ""; 
+    questionEl.classList.remove('text-correct', 'text-wrong', 'hidden-text');
     inputEl.value = '';
 
     if (currentMode === 'dictation') {
@@ -119,7 +121,6 @@ function loadQuestion() {
         setTimeout(() => speakQuestion(), 100);
     } 
     else {
-        questionEl.classList.remove('hidden-text');
         inputEl.style.display = 'none';
         optionsEl.style.display = 'flex';
         speakerBtn.style.display = 'none';
