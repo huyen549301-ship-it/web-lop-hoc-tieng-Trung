@@ -91,7 +91,7 @@ function setMode(mode) {
     loadQuestion();
 }
 
-// 5. Tải câu hỏi (Đã tối ưu ẩn đáp án ngay lập tức)
+// 5. Tải câu hỏi
 function loadQuestion() {
     if (wordQueue.length === 0) { showResult(); return; }
     
@@ -101,47 +101,32 @@ function loadQuestion() {
     const speakerBtn = document.getElementById('speaker-btn');
     const optionsEl = document.getElementById('options');
 
-    // Reset giao diện & màu sắc
+    questionEl.innerText = current.word;
     questionEl.style.color = "";
+    questionEl.classList.add('hidden-text');
     inputEl.value = '';
 
     if (currentMode === 'dictation') {
-        // CHÉP CHÍNH TẢ: Ẩn chữ ngay lập tức bằng cách thay nội dung thành dấu ? hoặc để trống
-        questionEl.innerText = "???"; 
-        questionEl.classList.add('hidden-text');
-
         inputEl.style.display = 'block';
         optionsEl.style.display = 'none';
         speakerBtn.style.display = 'block';
-        
-        // Focus ngay lập tức vào ô nhập
         inputEl.focus();
-        
-        // Phát âm thanh ngay (giảm delay)
-        setTimeout(() => speakQuestion(), 100);
+        setTimeout(() => speakQuestion(), 500);
     } 
     else if (currentMode === 'listen') {
-        // LUYỆN NGHE: Ẩn chữ Hán, người dùng chỉ nhìn đáp án nghĩa tiếng Việt
-        questionEl.innerText = "🔊 Nghe và chọn"; 
-        questionEl.classList.add('hidden-text');
-
         inputEl.style.display = 'none';
         optionsEl.style.display = 'flex';
         speakerBtn.style.display = 'block';
-        
-        setTimeout(() => speakQuestion(), 100);
+        questionEl.classList.add('hidden-text');
+        setTimeout(() => speakQuestion(), 800);
     } 
     else {
-        // CHẾ ĐỘ THƯỜNG (Nhìn chữ chọn nghĩa)
-        questionEl.innerText = current.word;
-        questionEl.classList.remove('hidden-text');
-
         inputEl.style.display = 'none';
         optionsEl.style.display = 'flex';
         speakerBtn.style.display = 'none';
+        questionEl.classList.remove('hidden-text');
     }
 
-    // Tạo danh sách đáp án trắc nghiệm
     if (currentMode !== 'dictation') {
         let options = [current.meaning];
         let fullList = currentLessonData.vocabulary;
