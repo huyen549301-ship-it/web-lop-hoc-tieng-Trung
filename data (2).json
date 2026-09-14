@@ -1,0 +1,262 @@
+[
+  {
+    "lesson_id": 1,
+    "vocabulary": [
+      {"word": "", "meaning": ""},
+      {"word": "", "meaning": ""}
+    ],
+    "arrange_sentences": [
+      {"word": "我叫阿兰", "meaning_words": ["Tôi", "tên là", "Lan"]},
+      {"word": "没关系", "meaning_words": ["không", "sao"]}
+    ]
+  },
+  {
+    "lesson_id": 2,
+    "vocabulary": [
+      {"word": "", "meaning": ""},
+      {"word": "", "meaning": ""}
+    ],
+    "arrange_sentences": [
+      {"word": "我叫阿兰", "meaning_words": ["Tôi", "tên là", "Lan"]},
+      {"word": "没关系", "meaning_words": ["không", "sao"]}
+    ]
+  },
+  {
+    "lesson_id": 3,
+    "vocabulary": [
+      {"word": "", "meaning": ""},
+      {"word": "", "meaning": ""}
+    ],
+    "arrange_sentences": [
+      {"word": "我是老师", "meaning_words": ["tôi", "là", "giáo viên"]},
+      {"word": "我是医生", "meaning_words": ["tôi", "là", "bác sĩ"]}
+    ]
+  },
+  {
+    "lesson_id": 4,
+    "vocabulary": [
+      {"word": "", "meaning": ""},
+      {"word": "", "meaning": ""}
+    ],
+    "arrange_sentences": [
+      {"word": "我是护士", "meaning_words": ["Tôi", "là", "y sĩ"]},
+      {"word": "我是翻译员", "meaning_words": ["Tôi", "là", "phiên dịch viên"]}
+    ]
+  },
+  {
+    "lesson_id": 5,
+    "vocabulary": [
+      {"word": "", "meaning": ""},
+      {"word": "", "meaning": ""},
+      {"word": "", "meaning": ""}
+    ],
+    "arrange_sentences": [
+      {"word": "你身体好吗", "meaning_words": ["bạn", "có", "khỏe", "không"]},
+      {"word": "这是你儿子吗", "meaning_words": ["đây là", "con trai", "bạn", "à?"]}
+    ]
+  },
+    {
+    "lesson_id": 6,
+    "vocabulary": [
+      {"word": "", "meaning": ""},
+      {"word": "", "meaning": ""},
+      {"word": "", "meaning": ""}
+    ],
+    "arrange_sentences": [
+      {"word": "你身体好吗", "meaning_words": ["bạn", "có", "khỏe", "không"]},
+      {"word": "这是你儿子吗", "meaning_words": ["đây là", "con trai", "bạn", "à?"]}
+    ]
+  },
+    {
+    "lesson_id": 7,
+    "vocabulary": [
+      {"word": "", "meaning": ""},
+      {"word": "", "meaning": ""},
+      {"word": "", "meaning": ""}
+    ],
+    "arrange_sentences": [
+      {"word": "你身体好吗", "meaning_words": ["bạn", "có", "khỏe", "không"]},
+      {"word": "这是你儿子吗", "meaning_words": ["đây là", "con trai", "bạn", "à?"]}
+    ]
+  },
+  {
+    "lesson_id": 8,
+    "vocabulary": [
+      {"word": "想", "meaning": "muốn"},
+      {"word": "喝", "meaning": "uống"},
+      {"word": "茶", "meaning": "trà"},
+      {"word": "吃", "meaning": "ăn"},
+      {"word": "米饭", "meaning": "cơm trắng"},
+      {"word": "下午", "meaning": "(buổi) chiều"},
+      {"word": "商店", "meaning": "cửa hàng"},
+      {"word": "买", "meaning": "mua"},
+      {"word": "卖", "meaning": "bán"},
+      {"word": "个", "meaning": "cái"},
+      {"word": "杯子", "meaning": "cái cốc, cái ly"},
+      {"word": "杯", "meaning": "ly, cốc (lượng từ)"},
+      {"word": "这", "meaning": "này, đây"},
+      {"word": "多少", "meaning": "bao nhiêu"},
+      {"word": "钱", "meaning": "tiền"},
+      {"word": "块", "meaning": "tệ (đơn vị tiền)"},
+      {"word": "这个", "meaning": "cái này"},
+      {"word": "那个", "meaning": "cái kia"},
+      {"word": "那", "meaning": "đó, kia"}
+    ],
+    "arrange_sentences": [
+      {"word": "Cái cốc này bao nhiêu tiền", "meaning_words": ["这个", "杯子", "多少", "钱"]},
+      {"word": "bạn muốn mua gì", "meaning_words": ["你", "想", "买", "什么"]},
+      {"word": "tôi muốn mua 2 cái cốc", "meaning_words": ["我", "想", "买", "两个", "杯子"]},
+      {"word": "tôi muốn mua cơm trắng và trà", "meaning_words": ["我", "想", "买", "米饭", "和", "茶"]},
+      {"word": "Bạn muốn uống gì", "meaning_words": ["你", "想", "喝", "什么"]},
+      {"word": "Tôi muốn uống trà", "meaning_words": ["我", "想", "喝", "茶"]},
+      {"word": "Tôi muốn uống trà sữa", "meaning_words": ["我", "想", "喝", "奶茶"]},
+      {"word": "Bạn muốn ăn gì", "meaning_words": ["你", "想", "吃", "什么"]},
+      {"word": "Tôi muốn ăn cơm trắng", "meaning_words": ["我", "想", "吃", "米饭"]},
+      {"word": "Cái cốc này 28 tệ", "meaning_words": ["这个", "杯子", "28", "块"]},
+      {"word": "Cái cốc kia bao nhiêu tiền", "meaning_words": ["那个", "杯子", "多少", "钱"]},
+      {"word": "Cái cốc kia 15 tệ", "meaning_words": ["那个", "杯子", "15", "块"]},
+      {"word": "Chiều bạn muốn làm gì", "meaning_words": ["下午", "你", "想", "做", "什么"]},
+      {"word": "Chiều tôi muốn đi ra cửa hàng", "meaning_words": ["下午", "我", "想", "去", "商店"]},
+      {"word": "Bạn đi ra cửa hàng làm gì", "meaning_words": ["你", "去", "商店", "做", "什么"]},
+      {"word": "Tôi đi ra cửa hàng mua 2 cái cốc", "meaning_words": ["我", "去", "商店", "买", "两个", "杯子"]}
+    ]
+  },
+  {
+    "lesson_id": 9,
+    "vocabulary": [
+      {"word": "小", "meaning": "nhỏ, bé"},
+      {"word": "猫", "meaning": "mèo"},
+      {"word": "在", "meaning": "ở"},
+      {"word": "那儿", "meaning": "đằng kia, kia"},
+      {"word": "那里", "meaning": "đằng kia, kia"},
+      {"word": "这儿", "meaning": "chỗ này, đây"},
+      {"word": "这里", "meaning": "chỗ này, đây"},
+      {"word": "狗", "meaning": "chó"},
+      {"word": "椅子", "meaning": "ghế"},
+      {"word": "下面", "meaning": "bên dưới, phía dưới"},
+      {"word": "哪儿", "meaning": "chỗ nào, đâu"},
+      {"word": "哪里", "meaning": "chỗ nào, đâu"},
+      {"word": "工作", "meaning": "(v) làm việc"},
+      {"word": "工作", "meaning": "(n) công việc"},
+      {"word": "儿子", "meaning": "con trai"},
+      {"word": "医院", "meaning": "bệnh viện"},
+      {"word": "医生", "meaning": "bác sĩ"},
+      {"word": "爸爸", "meaning": "bố"}
+    ],
+    "arrange_sentences": [
+      {"word": "con mèo của bạn ở đâu", "meaning_words": ["你", "的", "猫", "在", "哪儿"]},
+      {"word": "con mèo của tôi ở chỗ kia", "meaning_words": ["我", "的", "猫", "在", "那儿"]},
+      {"word": "con chó của bạn ở đâu", "meaning_words": ["你", "的", "狗", "在", "哪儿"]},
+      {"word": "con chó của tôi ở đây", "meaning_words": ["我", "的", "狗", "在", "这儿"]},
+      {"word": "bạn làm việc ở đâu", "meaning_words": ["你", "在", "哪儿", "工作"]},
+      {"word": "tôi làm việc ở trường học", "meaning_words": ["我", "在", "学校", "工作"]},
+      {"word": "con trai bạn làm việc ở đâu", "meaning_words": ["你", "儿子", "在", "哪儿", "工作"]},
+      {"word": "con trai tôi làm việc ở bệnh viện", "meaning_words": ["我", "儿子", "在", "医院", "工作"]},
+      {"word": "Con gái tôi là bác sĩ", "meaning_words": ["我", "女儿", "是", "医生"]},
+      {"word": "Bố bạn (có) ở nhà không", "meaning_words": ["你", "爸爸", "在", "家", "吗"]},
+      {"word": "Bố tôi không ở nhà", "meaning_words": ["我", "爸爸", "不", "在", "家"]},
+      {"word": "Ông ấy làm việc ở bệnh viện", "meaning_words": ["他", "在", "医院", "工作"]},
+      {"word": "Mẹ bạn làm việc ở bệnh viện phải không", "meaning_words": ["你", "妈妈", "在", "医院", "工作", "吗"]},
+      {"word": "Mẹ tôi không làm việc ở bệnh viện", "meaning_words": ["我", "妈妈", "不在", "医院", "工作"]},
+      {"word": "Mẹ bạn làm việc ở trường học phải không", "meaning_words": ["你", "妈妈", "在", "学校", "工作", "吗"]},
+      {"word": "mẹ tôi làm việc ở bệnh viện", "meaning_words": ["我", "妈妈", "在", "医院", "工作"]},
+      {"word": "con mèo ở dưới cái ghế", "meaning_words": ["小猫", "在", "椅子", "下面"]},
+      {"word": "quyển sách ở dưới cái ghế", "meaning_words": ["书", "在", "椅子", "下面"]},
+      {"word": "quyển sách ở dưới cái cốc", "meaning_words": ["书", "在", "杯子", "下面"]},
+      {"word": "cái cốc ở dưới cái ghế", "meaning_words": ["杯子", "在", "椅子", "下面"]},
+      {"word": "con chó ở dưới cái ghế", "meaning_words": ["小狗", "在", "椅子", "下面"]}
+    ]
+  },
+  {
+    "lesson_id": 10,
+    "vocabulary": [
+      {"word": "桌子", "meaning": "bàn"},
+      {"word": "上面", "meaning": "bên trên"},
+      {"word": "上", "meaning": "trên"},
+      {"word": "电脑", "meaning": "máy tính"},
+      {"word": "和", "meaning": "và"},
+      {"word": "本", "meaning": "quyển"},
+      {"word": "里", "meaning": "trong, bên trong"},
+      {"word": "前面", "meaning": "phía trước"},
+      {"word": "后面", "meaning": "phía sau"},
+      {"word": "王方", "meaning": "Vương Phương (tên người)"},
+      {"word": "谢朋", "meaning": "Tạ Bằng (tên người)"},
+      {"word": "没有", "meaning": "không có"},
+      {"word": "能", "meaning": "có thể"},
+      {"word": "坐", "meaning": "ngồi"},
+      {"word": "张", "meaning": "cái (lượng từ của cái bàn)"}
+    ],
+    "arrange_sentences": [
+      {"word": "trên bàn có cái gì", "meaning_words": ["桌子", "上", "有", "什么"]},
+      {"word": "trên bàn có 1 cái máy tính và 1 quyển sách", "meaning_words": ["桌子", "上", "有", "一个", "电脑", "和", "一本", "书"]},
+      {"word": "trên bàn có 1 cái cốc", "meaning_words": ["桌子", "上", "有", "一个", "杯子"]},
+      {"word": "cái cốc ở trên ghế", "meaning_words": ["杯子", "在", "椅子", "上"]},
+      {"word": "cái cốc ở trong bàn", "meaning_words": ["杯子", "在", "桌子", "里"]},
+      {"word": "người ở phía trước là Vương Phương", "meaning_words": ["前面", "的", "人", "是", "王方"]},
+      {"word": "người ở phía trên là Vương Phương", "meaning_words": ["上面", "的", "人", "是", "王方"]},
+      {"word": "người ở phía dưới là Tạ Bằng", "meaning_words": ["下面", "的", "人", "是", "谢朋"]},
+      {"word": "người ở phía sau là Tạ Bằng", "meaning_words": ["后面", "的", "人", "是", "谢朋"]},
+      {"word": "Tạ Bằng làm việc ở cửa hàng", "meaning_words": ["谢朋", "在", "商店", "工作"]},
+      {"word": "Chỗ này có người không", "meaning_words": ["这儿", "有", "人", "吗"]},
+      {"word": "Chỗ này không có người. Mời ngồi", "meaning_words": ["这儿", "没有", "人", "请坐"]},
+      {"word": "Tôi có thể ngồi ở chỗ này không", "meaning_words": ["我", "能", "坐", "这儿", "吗"]},
+      {"word": "Vương Phương ngồi ở phía trước Tạ Bằng", "meaning_words": ["王方", "坐在", "谢朋", "前面"]},
+      {"word": "Tạ Bằng ngồi ở phía sau Vương Phương", "meaning_words": ["谢朋", "坐在", "王方", "后面"]},
+      {"word": "Con mèo phía trước là của tôi", "meaning_words": ["前面", "的", "猫", "是", "我的"]},
+      {"word": "con mèo phía sau là của tôi", "meaning_words": ["后面", "的", "猫", "是", "我的"]}
+    ]
+  },
+  {
+    "lesson_id": 11,
+    "vocabulary": [
+      {"word": "", "meaning": ""},
+      {"word": "", "meaning": ""}
+    ],
+    "arrange_sentences": [
+      {"word": "我叫阿兰", "meaning_words": ["Tôi", "tên là", "Lan"]}
+    ]
+  },
+  {
+    "lesson_id": 12,
+    "vocabulary": [
+      {"word": "", "meaning": ""},
+      {"word": "", "meaning": ""}
+    ],
+    "arrange_sentences": [
+      {"word": "我叫阿兰", "meaning_words": ["Tôi", "tên là", "Lan"]},
+      {"word": "没关系", "meaning_words": ["không", "sao"]}
+    ]
+  },
+  {
+    "lesson_id": 13,
+    "vocabulary": [
+      {"word": "", "meaning": ""},
+      {"word": "", "meaning": ""}
+    ],
+    "arrange_sentences": [
+      {"word": "我叫阿兰", "meaning_words": ["Tôi", "tên là", "Lan"]}
+    ]
+  },
+    {
+    "lesson_id": 14,
+    "vocabulary": [
+      {"word": "", "meaning": ""},
+      {"word": "", "meaning": ""}
+    ],
+    "arrange_sentences": [
+      {"word": "我叫阿兰", "meaning_words": ["Tôi", "tên là", "Lan"]},
+      {"word": "没关系", "meaning_words": ["không", "sao"]}
+    ]
+  },
+    {
+    "lesson_id": 15,
+    "vocabulary": [
+      {"word": "", "meaning": ""},
+      {"word": "", "meaning": ""}
+    ],
+    "arrange_sentences": [
+      {"word": "我叫阿兰", "meaning_words": ["Tôi", "tên là", "Lan"]},
+      {"word": "没关系", "meaning_words": ["không", "sao"]}
+    ]
+  }
+]

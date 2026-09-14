@@ -1,0 +1,161 @@
+body { font-family: 'Segoe UI', sans-serif; background: #e9ecef; text-align: center; padding: 20px; }
+
+/* 1. Menu chọn bài (Tự động co giãn) */
+ #menu {
+    display: grid;
+    /* Mặc định trên điện thoại: 2 cột */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 10px;
+} 
+
+/* Trên màn hình máy tính (từ 600px trở lên): 4 cột */
+@media (min-width: 600px) {
+     #menu {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+}
+
+/* 2. Định dạng chung cho mọi nút */
+button {
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background: #007bff;
+    color: white;
+    transition: 0.3s;
+    -webkit-tap-highlight-color: transparent; 
+    touch-action: manipulation;
+}
+button:hover { background: #0056b3; }
+
+/* 3. Khu vực chơi game (Chứa các nút đáp án) */
+#game-container { 
+    max-width: 400px; 
+    margin: 0 auto; 
+    background: white; 
+    padding: 30px; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+#options {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;  
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 20px auto 0 auto !important;
+    padding: 0 !important;
+    text-align: center !important; 
+}
+
+/* 2. Sửa nút */
+#options button {
+    display: block !important;      
+    width: 80% !important;          
+    max-width: 300px !important;    
+    margin: 5px auto !important;  
+    padding: 15px !important;       
+    text-align: center !important;  
+}
+
+/* 4. Modal kết quả */
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; }
+
+.modal-content { background: white; padding: 30px; border-radius: 15px; text-align: center; }
+
+.modal-content h2 { color: #333; }
+#speaker-btn {
+    background: none !important; 
+    padding: 5px !important;
+    font-size: 24px !important; 
+    display: block;
+    margin: 0 auto;
+    border: none !important;
+}
+
+/* 5. Cấu hình trạng thái Ẩn/Hiện đáp án */
+.hidden-text {
+    opacity: 0 !important;
+    pointer-events: none;
+    user-select: none;
+}
+
+#question {
+    transition: opacity 0.5s ease, color 0.3s ease;
+    opacity: 1; /* Mặc định là hiện */
+    min-height: 1.5em; 
+    word-wrap: break-word;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+/* 6. Bổ sung cho tính năng Chép chính tả */
+#answer-input {
+    font-size: 18px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+    padding: 10px; /* Thêm padding để ô nhập trông thoáng hơn */
+}
+#answer-input:focus { border-color: #007bff; outline: none; }
+.text-correct { color: #4CAF50 !important; font-weight: bold; }
+.text-wrong { color: #f44336 !important; font-weight: bold; }
+
+/* 7. CSS cho tính năng Sắp xếp câu */
+#arrange-container {
+    max-width: 400px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#arrange-container button {
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    background-color: #607D8B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#arrange-container button:hover {
+    background-color: #455A64;
+}
+
+#word-pool, #drop-zone {
+    min-height: 50px;
+    border: 2px dashed #ccc;
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.tag {
+    background: #e0e0e0;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+.tag:hover {
+    background: #d0d0d0;
+    transform: scale(1.05);
+    transition: 0.2s;
+}

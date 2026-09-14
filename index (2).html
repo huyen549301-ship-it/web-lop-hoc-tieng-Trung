@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="styles.css?v=1.2">
+    <title>Bài tập HSK1</title>
+</head>
+<body>
+    <div id="app">
+        <h1>BÀI TẬP HSK1</h1>
+        
+        <!-- 1. Menu chọn bài -->
+        <div id="menu">
+            <button onclick="startLesson(1)">Bài 1</button>
+            <button onclick="startLesson(2)">Bài 2</button>
+            <button onclick="startLesson(3)">Bài 3</button>
+            <button onclick="startLesson(4)">Bài 4</button>
+            <button onclick="startLesson(5)">Bài 5</button>
+            <button onclick="startLesson(6)">Bài 6</button>
+            <button onclick="startLesson(7)">Bài 7</button>
+            <button onclick="startLesson(8)">Bài 8</button>
+            <button onclick="startLesson(9)">Bài 9</button>
+            <button onclick="startLesson(10)">Bài 10</button>
+            <button onclick="startLesson(11)">Bài 11</button>
+            <button onclick="startLesson(12)">Bài 13</button>
+            <button onclick="startLesson(14)">Bài 14</button>
+            <button onclick="startLesson(15)">Bài 15</button>
+        </div>
+
+        <!-- 2. Menu chọn chế độ (Bấm quay lại sẽ về Chọn Bài) -->
+        <div id="mode-menu" style="display:none; text-align: center; margin: 20px auto; max-width: 400px;">
+            <button onclick="backToMenu()" style="margin-bottom: 15px;">⬅️ Chọn bài</button>
+            <h3>Chọn chế độ học:</h3>
+            <button onclick="setMode('listen')">🎧 Luyện nghe</button>
+            <button onclick="setMode('dictation')">✍️ Chép chính tả</button>
+            <button onclick="setMode('look')" style="margin-top: 10px;">👁️ Học từ vựng</button>
+            <button onclick="startArrangeGame()" style="margin-top: 10px; background-color: #ff9800;">🧩 Sắp xếp câu</button>
+        </div>
+
+        <!-- 3. Khung chơi game chính (Bấm quay lại sẽ về Menu Chọn Chế Độ) -->
+        <div id="game-container" style="display:none;">
+            <button onclick="backToMenu()" style="margin-bottom: 15px;">⬅️ menu </button>
+            
+            <div id="q-box" style="text-align: center; margin-bottom: 20px;">
+                <h2 id="question" class="hidden-text"></h2>
+                <button id="speaker-btn" onclick="speakQuestion()" style="cursor: pointer; font-size: 24px; border: none; background: none;">🔊</button>
+            </div>
+            
+            <div id="options"></div> 
+            
+            <div id="dictation-box" style="display:none; text-align:center; margin-top:20px;">
+                <input type="text" id="answer-input" placeholder="Nhập chữ tại đây..." style="padding:10px; width:80%; border: 1px solid #ccc; border-radius: 5px;">
+                <br>
+                <button onclick="checkDictation()" style="margin-top:15px; padding: 10px 20px;">Kiểm tra</button>
+            </div>
+        </div>
+
+        <!-- 4. Khung game Sắp xếp câu (Bấm quay lại sẽ về Menu Chọn Chế Độ) -->
+        <div id="arrange-container" style="display: none;">
+            <button onclick="backToMenu()">⬅️ menu </button>
+            <h2 id="arrange-question"></h2>
+            <div id="word-pool"></div>
+            <div id="drop-zone"></div>
+            <button onclick="checkArrange()" style="margin-top: 15px;">Kiểm tra</button>
+        </div>
+
+        <!-- 5. Pop-up Kết quả -->
+        <div id="resultModal" class="modal">
+            <div class="modal-content">
+                <h2>Hoàn thành!</h2>
+                <p id="resultText"></p>
+                <button onclick="location.reload()">Quay lại chọn bài</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
