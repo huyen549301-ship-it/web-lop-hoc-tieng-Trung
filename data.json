@@ -220,11 +220,42 @@
     "hsk_level": 1,
     "lesson_id": 11,
     "vocabulary": [
-      {"word": "", "meaning": ""},
-      {"word": "", "meaning": ""}
+      {"word": "现在", "meaning": "bây giờ, hiện tại"},
+      {"word": "点", "meaning": "giờ"},
+      {"word": "分", "meaning": "phút"},
+      {"word": "中午", "meaning": "trưa"},
+      {"word": "吃饭", "meaning": "ăn cơm"},
+      {"word": "时候", "meaning": "khi, lúc"},
+      {"word": "回", "meaning": "về"}
+      {"word": "电影", "meaning": "phim"},
+      {"word": "住", "meaning": "cư trú, sống ở"},
+      {"word": "前", "meaning": "trước"},
+      {"word": "小时", "meaning": "tiếng đồng hồ"},
+      {"word": "北京", "meaning": "Bắc Kinh"},
+      {"word": "差", "meaning": "kém"},
+      {"word": "半", "meaning": "rưỡi"}
     ],
     "arrange_sentences": [
-      {"word": "我叫阿兰", "meaning_words": ["Tôi", "tên là", "Lan"]}
+      {"word": "Bây giờ là mấy giờ", "meaning_words": ["现在", "是", "几", "点"]},
+      {"word": "Bây giờ 2 giờ 20 phút", "meaning_words": ["现在", "2", "点", "20", "分"]},
+      {"word": "Mấy giờ bạn ăn cơm", "meaning_words": ["你", "几点", "吃饭"]},
+      {"word": "12 giờ trưa tôi ăn cơm", "meaning_words": ["我", "中午", "12", "点", "吃饭"]},
+      {"word": "mấy giờ bố bạn về nhà", "meaning_words": ["你", "爸爸", "几", "点", "回家"]},
+      {"word": "5 giờ chiều bố tôi về nhà", "meaning_words": ["我爸爸", "下午", "5点", "回家"]},
+      {"word": "Bao giờ chúng ta đi xem phim", "meaning_words": ["我们", "什么", "时候", "去", "看", "电影"]},
+      {"word": "7 giờ rưỡi chúng ta đi xem phim", "meaning_words": ["我们", "7点", "半", "去", "看", "电影"]},
+      {"word": "Khi nào là sinh nhật bạn", "meaning_words": ["什么", "时候", "是", "你", "生日"]},
+      {"word": "Khi nào bạn ăn tối", "meaning_words": ["你", "什么", "时候", "吃", "晚饭"]},
+      {"word": "khi nào bạn đi đến trường", "meaning_words": ["你", "什么", "时候", "去", "学校"]},
+      {"word": "Bao giờ ông ấy về nhà", "meaning_words": ["他", "什么", "时候", "回家"]},
+      {"word": "Bao giờ bạn về nước", "meaning_words": ["你", "什么", "时候", "回国"]},
+      {"word": "Khi tôi đi đến trường, mẹ vẫn đang ăn sáng", "meaning_words": ["我", "去学校", "的", "时候", "妈妈", "还在", "吃早饭"]},
+      {"word": "Khi tôi ngủ, mẹ vẫn đang làm việc", "meaning_words": ["我", "睡觉", "的", "时候", "妈妈", "还在", "工作"]},
+      {"word": "khi tôi học tiếng Trung, bố đang xem phim", "meaning_words": ["我", "学", "中文", "的时候", "爸爸", "在", "看电影"]},
+      {"word": "Trước 5 giờ chiều, bố sẽ về nhà", "meaning_words": ["下午", "5点", "前", "爸爸", "会", "回家"]},
+      {"word": "Trước thứ 2 tuần sau, mẹ sẽ về nước", "meaning_words": ["下个", "星期一", "前", "妈妈", "会", "回国"]},
+      {"word": "2 tháng trước, tôi vẫn làm việc ở bệnh viện", "meaning_words": ["两个月", "前", "我", "还", "在", "医院", "工作"]},
+      {"word": "1 năm trước tôi vẫn chưa học tiếng Trung", "meaning_words": ["一年", "前", "我", "还没", "学", "中文"]}
     ]
   },
   {
