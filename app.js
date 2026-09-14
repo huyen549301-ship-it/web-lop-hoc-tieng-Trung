@@ -10,6 +10,16 @@ let arrangeQueue = [];
 let totalArrangeAttempts = 0;
 let correctArrangeAttempts = 0;
 
+// Khởi tạo danh sách giọng đọc cho Safari/iOS
+let availableVoices = [];
+function updateVoices() {
+    availableVoices = window.speechSynthesis.getVoices();
+}
+if ('speechSynthesis' in window) {
+    window.speechSynthesis.onvoiceschanged = updateVoices;
+    updateVoices();
+}
+
 // 1. Tải dữ liệu
 async function loadData() {
     try {
@@ -63,7 +73,7 @@ function startLesson(lessonId) {
     document.getElementById('mode-menu').style.display = 'block';
 }
 
-// 4. Chọn Chế độ chơi
+// 4. Chọn Chế độ chơi (Đã sửa lỗi kích hoạt âm thanh trên Mobile/iOS)
 function setMode(mode) {
     currentMode = mode;
     
@@ -80,11 +90,12 @@ function setMode(mode) {
     document.getElementById('options').style.display = (mode === 'dictation') ? 'none' : 'flex';
     document.getElementById('dictation-box').style.display = (mode === 'dictation') ? 'block' : 'none';
     
-    // Mồi âm thanh
-    const mồi = new SpeechSynthesisUtterance("你好");
-    mồi.lang = 'zh-CN';
-    mồi.volume = 0;
-    window.speechSynthesis.speak(mồi);
+    // Mồi âm thanh ngay tại sự kiện click để vượt rào cản chặn âm thanh tự động của iOS
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const dummyUtterance = new SpeechSynthesisUtterance('');
+        window.speechSynthesis.speak(dummyUtterance);
+    }
     
     loadQuestion();
 }
@@ -148,14 +159,13 @@ function loadQuestion() {
     }
 }
 
-// 6. Kiểm tra đáp án Trắc nghiệm (Đã sửa lỗi hiển thị chữ Hán chuẩn)
+// 6. Kiểm tra đáp án Trắc nghiệm
 function checkAnswer(selected, correct, btn) {
     document.getElementById('options').style.pointerEvents = 'none';
     const questionEl = document.getElementById('question');
     
     totalAttempts++;
     
-    // Đảm bảo gán lại đúng chữ Hán hiện tại và gỡ ẩn
     questionEl.innerText = wordQueue[0].word;
     questionEl.classList.remove('hidden-text');
     
@@ -164,8 +174,10 @@ function checkAnswer(selected, correct, btn) {
         btn.style.backgroundColor = "#4CAF50";
         btn.style.color = "#ffffff";
         questionEl.classList.add('text-correct');
+        
         setTimeout(() => { 
             wordQueue.shift(); 
+            questionEl.classList.remove('text-correct'); 
             document.getElementById('options').style.pointerEvents = 'auto';
             loadQuestion(); 
         }, 1500);
@@ -182,6 +194,7 @@ function checkAnswer(selected, correct, btn) {
         setTimeout(() => { 
             btn.style.backgroundColor = ""; 
             btn.style.color = "";
+            questionEl.classList.remove('text-wrong'); 
             document.getElementById('options').style.pointerEvents = 'auto';
             loadQuestion(); 
         }, 1500);
@@ -203,26 +216,23 @@ function checkDictation() {
     const cleanCorrect = normalize(correct);
 
     qEl.classList.remove('hidden-text');
+    qEl.innerText = correct; 
 
     if (cleanInput === cleanCorrect) {
         correctAttempts++;
-        qEl.style.color = "#4CAF50";
-        qEl.innerText = correct; 
+        qEl.classList.add('text-correct');
         document.getElementById('answer-input').value = '';
         
         setTimeout(() => { 
-            qEl.style.color = "";
+            qEl.classList.remove('text-correct');
             wordQueue.shift(); 
             loadQuestion(); 
         }, 1000);
     } else {
-        qEl.style.color = "#f44336";
-        qEl.innerText = "❌  " + correct;
-        
+        qEl.classList.add('text-wrong');
         wordQueue.push(wordQueue.shift());
         
         setTimeout(() => { 
-            qEl.style.color = "";
             qEl.classList.remove('text-wrong'); 
             loadQuestion(); 
         }, 1500);
@@ -282,9 +292,9 @@ function loadArrangeQuestion() {
     });
 }
 
-function checkArrange() {
+function checkArrange(evt) {
     const dropZone = document.getElementById('drop-zone');
-    const checkBtn = event.target;
+    const checkBtn = evt ? evt.target : event.target;
     
     totalArrangeAttempts++;
     checkBtn.disabled = true;
@@ -322,16 +332,20 @@ function checkArrange() {
     }
 }
 
-// 9. Phát âm
+// 9. Phát âm chuẩn hóa hỗ trợ Safari/iOS/Android
 function speakQuestion() {
+    if (!('speechSynthesis' in window) || !wordQueue.length) return;
+    
     window.speechSynthesis.cancel();
     const text = wordQueue[0].word;
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'zh-CN';
     utterance.rate = 0.7;
-    const voices = window.speechSynthesis.getVoices();
-    const viVoice = voices.find(v => v.lang === 'zh' || v.name.includes('ZH'));
-    if (viVoice) utterance.voice = viVoice;
+
+    const voices = availableVoices.length ? availableVoices : window.speechSynthesis.getVoices();
+    const zhVoice = voices.find(v => v.lang.includes('zh') || v.lang.includes('ZH') || v.name.includes('Chinese'));
+    
+    if (zhVoice) utterance.voice = zhVoice;
     window.speechSynthesis.speak(utterance);
 } 
 
@@ -350,10 +364,6 @@ function showResult() {
     resultText.innerHTML = `Khả năng ghi nhớ: <b>${percent}%</b>`;
     document.getElementById('resultModal').style.display = 'flex';
 }
-
-window.speechSynthesis.onvoiceschanged = () => {
-    console.log("Giọng nói đã sẵn sàng");
-};
 
 // 11. Các hàm quay lại Điều hướng
 function backToHskSelect() {
