@@ -1,5 +1,5 @@
 let allWords = [];
-let currentData = null
+let currentData = null;
 let currentLessonData = null;
 let wordQueue = [];
 let totalAttempts = 0;
@@ -28,7 +28,7 @@ function startLesson(lessonId) {
     wordQueue = [...currentLessonData.vocabulary];
     wordQueue.sort(() => Math.random() - 0.5);
 
-    document.getElementById('menu').style.display = 'none';
+    document.getElementById('menu-section').style.display = 'none';
     document.getElementById('mode-menu').style.display = 'block';
     
     totalAttempts = 0;
@@ -37,7 +37,7 @@ function startLesson(lessonId) {
 
 function setMode(mode) {
     currentMode = mode;
-    document.getElementById('menu').style.display = 'none';
+    document.getElementById('menu-section').style.display = 'none';
     document.getElementById('mode-menu').style.display = 'none';
     document.getElementById('game-container').style.display = 'block';
     const isDictation = (mode === 'dictation');
@@ -46,9 +46,9 @@ function setMode(mode) {
     
     // Mồi âm thanh
     const mồi = new SpeechSynthesisUtterance("你好");
-mồi.lang = 'zh-CN';
-mồi.volume = 0;
-window.speechSynthesis.speak(mồi);
+    mồi.lang = 'zh-CN';
+    mồi.volume = 0;
+    window.speechSynthesis.speak(mồi);
     
     loadQuestion();
 }
@@ -123,6 +123,7 @@ function checkAnswer(selected, correct, btn) {
     if (selected === correct) {
         correctAttempts++;
         btn.style.backgroundColor = "#4CAF50";
+        btn.style.color = "#ffffff";
         questionEl.classList.add('text-correct');
         setTimeout(() => { 
             wordQueue.shift(); 
@@ -131,6 +132,7 @@ function checkAnswer(selected, correct, btn) {
         }, 1500);
     } else {
         btn.style.backgroundColor = "#f44336";
+        btn.style.color = "#ffffff";
         questionEl.classList.add('text-wrong');
         
         if (wordQueue.length > 1) {
@@ -139,7 +141,8 @@ function checkAnswer(selected, correct, btn) {
         }
         
         setTimeout(() => { 
-            btn.style.backgroundColor = "#007bff"; 
+            btn.style.backgroundColor = ""; 
+            btn.style.color = "";
             document.getElementById('options').style.pointerEvents = 'auto';
             loadQuestion(); 
         }, 1500);
@@ -153,7 +156,7 @@ function checkDictation() {
     const correct = wordQueue[0].word;
     const qEl = document.getElementById('question');
 
-const normalize = (str) => {
+    const normalize = (str) => {
         return str.toString().toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
     };
 
@@ -165,7 +168,6 @@ const normalize = (str) => {
     if (cleanInput === cleanCorrect) {
         correctAttempts++;
         qEl.style.color = "#4CAF50";
-        // Giữ lại từ gốc để hiển thị chính xác trước khi chuyển câu
         qEl.innerText = correct; 
         document.getElementById('answer-input').value = '';
         
@@ -182,8 +184,6 @@ const normalize = (str) => {
         
         setTimeout(() => { 
             qEl.style.color = "";
-            // Không cần remove class text-wrong nếu bạn không dùng CSS cho nó, 
-            // nhưng giữ lại để logic sạch sẽ
             qEl.classList.remove('text-wrong'); 
             loadQuestion(); 
         }, 1500);
@@ -194,7 +194,6 @@ const normalize = (str) => {
 document.getElementById('answer-input').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') checkDictation();
 });
-
 
 function checkArrange() {
     const dropZone = document.getElementById('drop-zone');
@@ -208,36 +207,35 @@ function checkArrange() {
     const correctSentence = currentData.meaning_words.join(" ");
 
     if (userSentence === correctSentence) {
-        correctArrangeAttempts++; // Tăng điểm
+        correctArrangeAttempts++; 
         dropZone.style.borderColor = "#4CAF50";
         dropZone.style.backgroundColor = "#e8f5e9";
         
         setTimeout(() => {
-            dropZone.style.borderColor = "#ccc";
+            dropZone.style.borderColor = "#cbd5e1";
             dropZone.style.backgroundColor = "transparent";
             checkBtn.disabled = false;
             
-            arrangeQueue.shift(); // Loại bỏ câu đã làm đúng khỏi hàng đợi
-            loadArrangeQuestion(); // Tải câu tiếp theo
+            arrangeQueue.shift(); 
+            loadArrangeQuestion(); 
         }, 1000);
     } else {
         dropZone.style.borderColor = "#f44336";
         dropZone.style.backgroundColor = "#ffebee";
         
-        // Sai thì đưa xuống cuối hàng đợi để lặp lại
         const wrongSentence = arrangeQueue.shift();
         arrangeQueue.push(wrongSentence);
         
         setTimeout(() => {
-            dropZone.style.borderColor = "#ccc";
+            dropZone.style.borderColor = "#cbd5e1";
             dropZone.style.backgroundColor = "transparent";
             checkBtn.disabled = false;
-            loadArrangeQuestion(); // Tải lại câu hỏi
+            loadArrangeQuestion(); 
         }, 1000);
     }
 }
 
-// 5. Hàm phát âm thanh
+// 5. Phát âm
 function speakQuestion() {
     window.speechSynthesis.cancel();
     const text = wordQueue[0].word;
@@ -265,14 +263,14 @@ function showResult() {
     document.getElementById('resultModal').style.display = 'flex';
 }
 
-// Tính năng độc lập: Sắp xếp câu
+// Tính năng Sắp xếp câu
 function startArrangeGame() {
     if (!currentLessonData || !currentLessonData.arrange_sentences || currentLessonData.arrange_sentences.length === 0) {
         alert("Bài này chưa có bài tập sắp xếp câu!");
         return;
     }
     currentMode = 'arrange';
-    document.getElementById('menu').style.display = 'none';
+    document.getElementById('menu-section').style.display = 'none';
     document.getElementById('mode-menu').style.display = 'none';
     document.getElementById('arrange-container').style.display = 'block';
     let tempQueue = [...currentLessonData.arrange_sentences];
@@ -287,6 +285,7 @@ function startArrangeGame() {
     
     loadArrangeQuestion();
 }
+
 function loadArrangeQuestion() {
     if (arrangeQueue.length === 0) {
         showResult(); 
@@ -314,34 +313,46 @@ function loadArrangeQuestion() {
     });
 }
 
-
 window.speechSynthesis.onvoiceschanged = () => {
     console.log("Giọng nói đã sẵn sàng");
 };
 
 function backToMenu() {
-    // 1. Dừng ngay âm thanh đang đọc (nếu có)
     window.speechSynthesis.cancel();
 
     const gameContainer = document.getElementById('game-container');
     const arrangeContainer = document.getElementById('arrange-container');
     const modeMenu = document.getElementById('mode-menu');
-    const mainMenu = document.getElementById('menu');
+    const mainMenu = document.getElementById('menu-section');
 
-    // Kiểm tra xem có đang ở trong màn hình làm bài/game hay không
     const isPlayingGame = (gameContainer && gameContainer.style.display !== 'none') || 
                           (arrangeContainer && arrangeContainer.style.display !== 'none');
 
     if (isPlayingGame) {
-        // Đang ở trong game -> Thoát ra menu Chọn Chế Độ
         if (gameContainer) gameContainer.style.display = 'none';
         if (arrangeContainer) arrangeContainer.style.display = 'none';
         if (modeMenu) modeMenu.style.display = 'block';
     } else {
-        // Đang ở menu Chọn Chế Độ -> Thoát ra màn hình Chọn Bài
         if (modeMenu) modeMenu.style.display = 'none';
-        if (mainMenu) mainMenu.style.display = 'grid'; // Dùng 'grid' thay vì 'block' để không vỡ giao diện nút
+        if (mainMenu) mainMenu.style.display = 'block';
         currentMode = '';
     }
 }
 
+// Quay lại Menu Chọn Chế Độ từ Modal Kết Quả
+function backToModeMenu() {
+    window.speechSynthesis.cancel();
+
+    const resultModal = document.getElementById('resultModal');
+    if (resultModal) resultModal.style.display = 'none';
+
+    const gameContainer = document.getElementById('game-container');
+    const arrangeContainer = document.getElementById('arrange-container');
+    if (gameContainer) gameContainer.style.display = 'none';
+    if (arrangeContainer) arrangeContainer.style.display = 'none';
+
+    const modeMenu = document.getElementById('mode-menu');
+    if (modeMenu) modeMenu.style.display = 'block';
+
+    currentMode = '';
+}
