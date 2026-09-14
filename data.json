@@ -106,7 +106,7 @@
       {"word": "多少", "meaning": "bao nhiêu"},
       {"word": "钱", "meaning": "tiền"},
       {"word": "块", "meaning": "tệ (đơn vị tiền)"},
-      {"word": " cái này", "meaning": " cái này"},
+      {"word": "这个", "meaning": "cái này"},
       {"word": "那个", "meaning": "cái kia"},
       {"word": "那", "meaning": "đó, kia"}
     ],
@@ -226,7 +226,7 @@
       {"word": "中午", "meaning": "trưa"},
       {"word": "吃饭", "meaning": "ăn cơm"},
       {"word": "时候", "meaning": "khi, lúc"},
-      {"word": "回", "meaning": "về"}
+      {"word": "回", "meaning": "về"},
       {"word": "电影", "meaning": "phim"},
       {"word": "住", "meaning": "cư trú, sống ở"},
       {"word": "前", "meaning": "trước"},
