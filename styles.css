@@ -17,7 +17,6 @@ body {
     text-align: center;
 }
 
-/* Header Trung tâm */
 .app-header {
     background: var(--card-bg);
     border-bottom: 1px solid var(--border-color);
@@ -95,7 +94,34 @@ body {
     margin-bottom: 15px;
 }
 
-/* 1. Menu chọn bài */
+/* Grid Cấp độ HSK */
+.hsk-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+@media (min-width: 600px) {
+    .hsk-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.btn-hsk {
+    background: #e6f0ff;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: 1px solid #b3d7ff;
+    padding: 18px;
+    border-radius: 10px;
+}
+.btn-hsk:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Grid bài học */
 #menu {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -109,7 +135,6 @@ body {
     }
 }
 
-/* 2. Định dạng Nút */
 button {
     padding: 12px 18px;
     font-size: 15px;
@@ -156,12 +181,8 @@ button:hover { background: var(--primary-hover); }
     font-size: 16px;
 }
 
-.btn-orange {
-    background-color: #ff9800;
-}
-.btn-orange:hover {
-    background-color: #e68a00;
-}
+.btn-orange { background-color: #ff9800; }
+.btn-orange:hover { background-color: #e68a00; }
 
 .btn-primary {
     background-color: var(--primary-color);
@@ -169,10 +190,7 @@ button:hover { background: var(--primary-hover); }
     margin-top: 15px;
 }
 
-/* 3. Khu vực game & Đáp án */
-#q-box {
-    margin-bottom: 20px;
-}
+#q-box { margin-bottom: 20px; }
 
 #options {
     display: flex !important;
@@ -207,7 +225,6 @@ button:hover { background: var(--primary-hover); }
     border: none !important;
 }
 
-/* 4. Modal kết quả */
 .modal { 
     position: fixed; 
     top: 0; left: 0; 
@@ -227,7 +244,6 @@ button:hover { background: var(--primary-hover); }
 
 .modal-icon { font-size: 40px; margin-bottom: 10px; }
 
-/* 5. Cấu hình trạng thái Ẩn/Hiện đáp án */
 .hidden-text {
     opacity: 0 !important;
     pointer-events: none;
@@ -245,7 +261,6 @@ button:hover { background: var(--primary-hover); }
     font-size: 2rem;
 }
 
-/* 6. Chép chính tả */
 #dictation-box {
     margin-top: 15px;
     width: 100%;
@@ -265,7 +280,6 @@ button:hover { background: var(--primary-hover); }
 .text-correct { color: #4CAF50 !important; font-weight: bold; }
 .text-wrong { color: #f44336 !important; font-weight: bold; }
 
-/* 7. Sắp xếp câu */
 #word-pool, #drop-zone {
     min-height: 60px;
     border: 2px dashed #cbd5e1;
