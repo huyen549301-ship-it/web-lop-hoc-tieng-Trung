@@ -244,14 +244,16 @@ button:hover { background: var(--primary-hover); }
 
 .modal-icon { font-size: 40px; margin-bottom: 10px; }
 
+/* ĐÃ SỬA: Ẩn phần tử ngay lập tức mà không có độ trễ hiệu ứng */
 .hidden-text {
-    opacity: 0 !important;
+    display: none !important;
     pointer-events: none;
     user-select: none;
 }
 
+/* ĐÃ SỬA: Bỏ transition opacity để không bị hiệu ứng mờ dần lộ chữ */
 #question {
-    transition: opacity 0.5s ease, color 0.3s ease;
+    transition: color 0.3s ease;
     opacity: 1; 
     min-height: 1.5em; 
     word-wrap: break-word;
