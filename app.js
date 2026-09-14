@@ -51,7 +51,7 @@ function selectHskLevel(level) {
         menuEl.appendChild(btn);
     });
 
-    document.getElementById('lesson-title').innerText = `Bài Học HSK ${level}`;
+    document.getElementById('lesson-title').innerText = `Bài Tập HSK ${level}`;
     document.getElementById('hsk-select-section').style.display = 'none';
     document.getElementById('menu-section').style.display = 'block';
 }
