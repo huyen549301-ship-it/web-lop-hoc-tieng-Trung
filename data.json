@@ -1,5 +1,6 @@
 [
   {
+    "hsk_level": 1,
     "lesson_id": 1,
     "vocabulary": [
       {"word": "", "meaning": ""},
@@ -11,6 +12,7 @@
     ]
   },
   {
+    "hsk_level": 1,
     "lesson_id": 2,
     "vocabulary": [
       {"word": "", "meaning": ""},
@@ -22,6 +24,7 @@
     ]
   },
   {
+    "hsk_level": 1,
     "lesson_id": 3,
     "vocabulary": [
       {"word": "", "meaning": ""},
@@ -33,6 +36,7 @@
     ]
   },
   {
+    "hsk_level": 1,
     "lesson_id": 4,
     "vocabulary": [
       {"word": "", "meaning": ""},
@@ -44,6 +48,7 @@
     ]
   },
   {
+    "hsk_level": 1,
     "lesson_id": 5,
     "vocabulary": [
       {"word": "", "meaning": ""},
@@ -55,7 +60,8 @@
       {"word": "这是你儿子吗", "meaning_words": ["đây là", "con trai", "bạn", "à?"]}
     ]
   },
-    {
+  {
+    "hsk_level": 1,
     "lesson_id": 6,
     "vocabulary": [
       {"word": "", "meaning": ""},
@@ -67,7 +73,8 @@
       {"word": "这是你儿子吗", "meaning_words": ["đây là", "con trai", "bạn", "à?"]}
     ]
   },
-    {
+  {
+    "hsk_level": 1,
     "lesson_id": 7,
     "vocabulary": [
       {"word": "", "meaning": ""},
@@ -80,6 +87,7 @@
     ]
   },
   {
+    "hsk_level": 1,
     "lesson_id": 8,
     "vocabulary": [
       {"word": "想", "meaning": "muốn"},
@@ -98,7 +106,7 @@
       {"word": "多少", "meaning": "bao nhiêu"},
       {"word": "钱", "meaning": "tiền"},
       {"word": "块", "meaning": "tệ (đơn vị tiền)"},
-      {"word": "这个", "meaning": "cái này"},
+      {"word": " cái này", "meaning": " cái này"},
       {"word": "那个", "meaning": "cái kia"},
       {"word": "那", "meaning": "đó, kia"}
     ],
@@ -122,6 +130,7 @@
     ]
   },
   {
+    "hsk_level": 1,
     "lesson_id": 9,
     "vocabulary": [
       {"word": "小", "meaning": "nhỏ, bé"},
@@ -168,6 +177,7 @@
     ]
   },
   {
+    "hsk_level": 1,
     "lesson_id": 10,
     "vocabulary": [
       {"word": "桌子", "meaning": "bàn"},
@@ -207,6 +217,7 @@
     ]
   },
   {
+    "hsk_level": 1,
     "lesson_id": 11,
     "vocabulary": [
       {"word": "", "meaning": ""},
@@ -217,6 +228,7 @@
     ]
   },
   {
+    "hsk_level": 1,
     "lesson_id": 12,
     "vocabulary": [
       {"word": "", "meaning": ""},
@@ -228,6 +240,7 @@
     ]
   },
   {
+    "hsk_level": 1,
     "lesson_id": 13,
     "vocabulary": [
       {"word": "", "meaning": ""},
@@ -237,7 +250,8 @@
       {"word": "我叫阿兰", "meaning_words": ["Tôi", "tên là", "Lan"]}
     ]
   },
-    {
+  {
+    "hsk_level": 1,
     "lesson_id": 14,
     "vocabulary": [
       {"word": "", "meaning": ""},
@@ -248,7 +262,8 @@
       {"word": "没关系", "meaning_words": ["không", "sao"]}
     ]
   },
-    {
+  {
+    "hsk_level": 1,
     "lesson_id": 15,
     "vocabulary": [
       {"word": "", "meaning": ""},
