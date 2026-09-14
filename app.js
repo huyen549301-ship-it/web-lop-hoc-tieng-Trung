@@ -63,15 +63,13 @@ function startLesson(lessonId) {
     document.getElementById('mode-menu').style.display = 'block';
 }
 
-// 4. Chọn Chế độ chơi (Đã sửa lỗi cạn mảng dữ liệu)
+// 4. Chọn Chế độ chơi
 function setMode(mode) {
     currentMode = mode;
     
-    // TẠO BẢN SAO MỚI HOÀN TOÀN TỪ DỮ LIỆU GỐC & TRỘN LẠI TỪ ĐẦU
     wordQueue = JSON.parse(JSON.stringify(currentLessonData.vocabulary));
     wordQueue.sort(() => Math.random() - 0.5);
 
-    // RESET ĐIỂM SỐ VỀ 0
     totalAttempts = 0;
     correctAttempts = 0;
 
@@ -91,7 +89,7 @@ function setMode(mode) {
     loadQuestion();
 }
 
-// 5. Tải câu hỏi
+// 5. Tải câu hỏi (Đã tối ưu ẩn ngay lập tức & gán đúng từ gốc)
 function loadQuestion() {
     if (wordQueue.length === 0) { showResult(); return; }
     
@@ -103,28 +101,28 @@ function loadQuestion() {
 
     questionEl.innerText = current.word;
     questionEl.style.color = "";
-    questionEl.classList.add('hidden-text');
     inputEl.value = '';
 
     if (currentMode === 'dictation') {
+        questionEl.classList.add('hidden-text');
         inputEl.style.display = 'block';
         optionsEl.style.display = 'none';
         speakerBtn.style.display = 'block';
         inputEl.focus();
-        setTimeout(() => speakQuestion(), 500);
+        setTimeout(() => speakQuestion(), 100);
     } 
     else if (currentMode === 'listen') {
+        questionEl.classList.add('hidden-text');
         inputEl.style.display = 'none';
         optionsEl.style.display = 'flex';
         speakerBtn.style.display = 'block';
-        questionEl.classList.add('hidden-text');
-        setTimeout(() => speakQuestion(), 800);
+        setTimeout(() => speakQuestion(), 100);
     } 
     else {
+        questionEl.classList.remove('hidden-text');
         inputEl.style.display = 'none';
         optionsEl.style.display = 'flex';
         speakerBtn.style.display = 'none';
-        questionEl.classList.remove('hidden-text');
     }
 
     if (currentMode !== 'dictation') {
@@ -149,12 +147,15 @@ function loadQuestion() {
     }
 }
 
-// 6. Kiểm tra đáp án Trắc nghiệm
+// 6. Kiểm tra đáp án Trắc nghiệm (Đã sửa lỗi hiển thị chữ Hán chuẩn)
 function checkAnswer(selected, correct, btn) {
     document.getElementById('options').style.pointerEvents = 'none';
     const questionEl = document.getElementById('question');
     
     totalAttempts++;
+    
+    // Đảm bảo gán lại đúng chữ Hán hiện tại và gỡ ẩn
+    questionEl.innerText = wordQueue[0].word;
     questionEl.classList.remove('hidden-text');
     
     if (selected === correct) {
@@ -231,7 +232,7 @@ document.getElementById('answer-input').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') checkDictation();
 });
 
-// 8. Game Sắp xếp câu (Đã tối ưu làm sạch dữ liệu)
+// 8. Game Sắp xếp câu
 function startArrangeGame() {
     if (!currentLessonData || !currentLessonData.arrange_sentences || currentLessonData.arrange_sentences.length === 0) {
         alert("Bài này chưa có bài tập sắp xếp câu!");
@@ -239,7 +240,6 @@ function startArrangeGame() {
     }
     currentMode = 'arrange';
     
-    // TẠO BẢN SAO VÀ RESET ĐIỂM SỐ
     arrangeQueue = JSON.parse(JSON.stringify(currentLessonData.arrange_sentences));
     arrangeQueue.sort(() => Math.random() - 0.5);
     
