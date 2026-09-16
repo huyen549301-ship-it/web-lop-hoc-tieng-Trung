@@ -168,6 +168,12 @@ function checkAnswer(selected, correct, btn) {
     
     questionEl.innerText = wordQueue[0].word;
     questionEl.classList.remove('hidden-text');
+
+    // === PHÁT ÂM KHI NGƯỜI HỌC BẤM ĐÁP ÁN Ở CHẾ ĐỘ HỌC TỪ VỰNG ===
+    if (currentMode === 'look') {
+        speakQuestion();
+    }
+    // =========================================================
     
     if (selected === correct) {
         correctAttempts++;
